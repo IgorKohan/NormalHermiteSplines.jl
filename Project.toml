@@ -1,0 +1,12 @@
+name = "NormalHermiteSplines"
+uuid = "67f7b941-d455-546b-99f0-07b665bf0aaf"
+keywords = ["interpolation", "splines", "hermite-splines", "normal-splines", "approximation", "rkhs"]
+authors = ["Igor Kohanovsky <nettvor@gmail.com>"]
+version = "0.5.1"
+
+[deps]
+LinearAlgebra = "37e2e46d-f89d-539d-b4ee-838fcccc9c8e"
+Test = "8dfed614-e22c-5e08-85e1-65c5234f0b40"
+
+[compat]
+julia = "1.5"
