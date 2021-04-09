@@ -10,7 +10,7 @@ export estimate_accuracy
 export evaluate_derivative
 # --
 ####
-#include("./examples/Main.jl")
+include("./examples/Main.jl")
 
 using LinearAlgebra
 
@@ -56,6 +56,7 @@ end
 
 include("./ReproducingKernels.jl")
 include("./GramMatrix.jl")
+include("./Utils.jl")
 include("./Interpolate.jl")
 
 """
