@@ -141,7 +141,7 @@ Spline was evaluated on a uniform Cartesian grid of size 51x51x51. For this case
 
 Further examples are given in documentation.  
 
-The normal splines method for one-dimensional function interpolation and linear ordinary differential and integral equations was proposed in [2]. An idea of the multivariate splines in Sobolev space was initially presented in [8], however it was not suited for solving real problems. Using that idea the multivariate generalization of the normal splines method was developed for two-dimensional problem of low-range computerized tomography in [3] and applied for solving a mathematical economics problem in [4]. At the same time an interpolation scheme with Matérn kernels was developed in [9], this scheme coincides with interpolating normal splines method. Further results related to  applications of the normal splines method were reported at the seminars and conferences [5,6,7]. 
+The normal splines method for one-dimensional function interpolation and linear ordinary differential and integral equations was proposed in [2]. An idea of the multivariate splines in Sobolev space was initially presented in [8], however it was not well-suited to solving real-world problems. Using that idea the multivariate generalization of the normal splines method was developed for two-dimensional problem of low-range computerized tomography in [3] and applied for solving a mathematical economics problem in [4]. At the same time an interpolation scheme with Matérn kernels was developed in [9], this scheme coincides with interpolating normal splines method. Further results related to  applications of the normal splines method were reported at the seminars and conferences [5,6,7]. 
 
 ## Documentation
 
