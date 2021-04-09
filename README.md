@@ -141,11 +141,11 @@ Spline was evaluated on a uniform Cartesian grid of size 51x51x51. For this case
 
 Further examples are given in documentation.  
 
+The normal splines method for one-dimensional function interpolation and linear ordinary differential and integral equations was proposed in [2]. An idea of the multivariate splines in Sobolev space was initially presented in [8], however it was not suited for solving real problems. Using that idea the multivariate generalization of the normal splines method was developed for two-dimensional problem of low-range computerized tomography in [3] and applied for solving a mathematical economics problem in [4]. At the same time an interpolation scheme with Matérn kernels was developed in [9], this scheme coincides with interpolating normal splines method. Further results related to  applications of the normal splines method were reported at the seminars and conferences [5,6,7]. 
+
 ## Documentation
 
 For more information and explanation see [Documentation](https://igorkohan.github.io/NormalHermiteSplines.jl/stable/).
-
-The normal splines method for one-dimensional function interpolation and linear ordinary differential and integral equations was proposed in [2]. Multivariate generalization of the normal splines method was developed for two-dimensional problem of low-range computerized tomography in [3] and applied for solving a mathematical economics problem in [4]. Further results were reported at the seminars and conferences [5,6,7].
 
 **References**
 
@@ -153,7 +153,7 @@ The normal splines method for one-dimensional function interpolation and linear 
 
 [2] V. Gorbunov, The method of normal spline collocation. [USSR Computational Mathematics and Mathematical Physics, Vol. 29, No. 1, 1989](https://www.researchgate.net/publication/265357408_Method_of_normal_spline-collocation)
 
-[3] I. Kohanovsky, Normal Splines in Computing Tomography (in Russian). [Avtometriya, No. 2, 1995](https://www.iae.nsk.su/images/stories/5_Autometria/5_Archives/1995/2/84-89.pdf)
+[3] I. Kohanovsky, Normal Splines in Computing Tomography (Нормальные сплайны в вычислительной томографии). [Avtometriya, No.2, 1995](https://www.iae.nsk.su/images/stories/5_Autometria/5_Archives/1995/2/84-89.pdf) 
 
 [4] V. Gorbunov, I. Kohanovsky, K. Makedonsky, Normal splines in reconstruction of multi-dimensional dependencies. [Papers of WSEAS International Conference on Applied Mathematics, Numerical Analysis Symposium, Corfu, 2004](http://www.wseas.us/e-library/conferences/corfu2004/papers/488-312.pdf)
 
@@ -163,8 +163,9 @@ The normal splines method for one-dimensional function interpolation and linear 
 
 [7] V. Gorbunov, I. Kohanovsky, Heterogeneous Parallel Method for the Construction of Multi-dimensional Smoothing Splines. [ESCO 2014 4th European Seminar on Computing, 2014](https://www.ana.iusiani.ulpgc.es/proyecto2015-2017/pdfnew/ESCO2014_Book_of_Abstracts.pdf)
 
+[8] A. Imamov,  M. Dzhurabaev, Splines in S.L. Sobolev spaces (Сплайны в пространствах С.Л.Соболева). Deposited manuscript. Dep. UzNIINTI, No 880, 1989.
 
-
+[9] J. Dix, R. Ogden, An Interpolation Scheme with Radial Basis in Sobolev Spaces H^s(R^n), Rocky Mountain J. Math. Vol. 24, No.4,  1994.
 
 
 
