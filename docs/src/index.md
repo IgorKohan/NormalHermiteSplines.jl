@@ -66,7 +66,7 @@ The normal splines method for one-dimensional function interpolation and linear 
 
 [7] A. Imamov,  M. Dzhurabaev, Splines in S.L. Sobolev spaces (Сплайны в пространствах С.Л.Соболева). Deposited manuscript. Dep. UzNIINTI, No 880, 1989.
 
-[8] J. Dix, R. Ogden, An Interpolation Scheme with Radial Basis in Sobolev Spaces H^s(R^n), Rocky Mountain J. Math. Vol. 24, No.4,  1994.
+[8] J. Dix, R. Ogden, An Interpolation Scheme with Radial Basis in Sobolev Spaces H^s(R^n). [Rocky Mountain J. Math. Vol. 24, No.4,  1994.](https://projecteuclid.org/download/pdf_1/euclid.rmjm/1181072340)
 
 ## Contents
 

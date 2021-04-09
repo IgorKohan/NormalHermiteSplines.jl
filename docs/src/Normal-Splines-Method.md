@@ -606,7 +606,7 @@ and if the value of this parameter is small enough the normal spline become simi
 
 As well, it is useful to preprocess the source data of the problem by transforming the domain where interpolation nodes are located into the unit hypercube.
 
-The normal splines method for one-dimensional function interpolation and linear ordinary differential and integral equations was proposed in [8] and [9] and developed in [10]. Multivariate generalization of the normal splines method was developed for two-dimensional problem of low-range computerized tomography in [15] and applied for solving a mathematical economics problem in [11]. Further results were reported on seminars and conferences [14,21,22].
+The normal splines method for one-dimensional function interpolation and linear ordinary differential and integral equations was proposed in [8] and [9] and developed in [10]. An idea of the multivariate splines in Sobolev space was initially presented in [25], however it was not well-suited to solving real-world problems. Using that idea the multivariate generalization of the normal splines method was developed for two-dimensional problem of low-range computerized tomography in [15] and applied for solving a mathematical economics problem in [11]. At the same time an interpolation scheme with Matérn kernels was developed in [26], this scheme coincides with interpolating normal splines method. Further results related to  applications of the normal splines method were reported at the seminars and conferences [14,21,22]. 
 
 **References**
 
@@ -638,7 +638,7 @@ The normal splines method for one-dimensional function interpolation and linear 
 
 [14] I. Kohanovsky, Multidimensional Normal Splines and Problem of Physical Field Approximation, International Conference on Fourier Analysis and its Applications, Kuwait, 1998.
 
-[15] I. Kohanovsky, Normal Splines in Computing Tomography, [Avtometriya, No.2, 1995](https://www.iae.nsk.su/images/stories/5_Autometria/5_Archives/1995/2/84-89.pdf)
+[15] I. Kohanovsky, Normal Splines in Computing Tomography (Нормальные сплайны в вычислительной томографии). [Avtometriya, No.2, 1995](https://www.iae.nsk.su/images/stories/5_Autometria/5_Archives/1995/2/84-89.pdf)
 
 [16] P.-J. Laurent, Approximation et optimization, Paris, 1972.
 
@@ -658,6 +658,10 @@ The normal splines method for one-dimensional function interpolation and linear 
 
 [24] C. Chen, Y. Hon, and R. Schaback, Scientific computing with radial basis functions. Department of Mathematics, University of Southern Mississippi, Hattiesburg, MS 39406 (2005).
  
+[25] A. Imamov,  M. Dzhurabaev, Splines in S.L. Sobolev spaces (Сплайны в пространствах С.Л.Соболева). Deposited manuscript. Dep. UzNIINTI, No 880, 1989.
+
+[26] J. Dix, R. Ogden, An Interpolation Scheme with Radial Basis in Sobolev Spaces H^s(R^n). [Rocky Mountain J. Math. Vol. 24, No.4,  1994.](https://projecteuclid.org/download/pdf_1/euclid.rmjm/1181072340)
+
 $~$
 
 ## Simple Normal Splines Examples
