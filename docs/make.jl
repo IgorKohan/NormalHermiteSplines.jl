@@ -14,7 +14,7 @@ makedocs(
 
 deploydocs(
     repo = "github.com/IgorKohan/NormalHermiteSplines.jl.git",
-		devurl = "dev",
+	devurl = "v0.5.2",
     versions = ["stable" => "v^", "v#.#.#"],
 )
 
