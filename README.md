@@ -7,8 +7,7 @@
 [![](https://img.shields.io/badge/docs-latest-blue.svg)](https://IgorKohan.github.io/NormalHermiteSplines.jl/dev)
 [![](https://img.shields.io/badge/docs-stable-blue.svg)](https://IgorKohan.github.io/NormalHermiteSplines.jl/stable)
 [![Build Status](https://travis-ci.com/IgorKohan/NormalHermiteSplines.jl.svg?branch=master)](https://travis-ci.com/github/IgorKohan/NormalHermiteSplines.jl)
-[![codecov.io](https://codecov.io/github/IgorKohan/NormalHermiteSplines.jl/coverage.svg?branch=master)](https://codecov.io/github/IgorKohan/NormalHermiteSplines.jl?branch=master)
-
+[![codecov](https://codecov.io/gh/IgorKohan/NormalHermiteSplines.jl/branch/master/graph/badge.svg?token=ynsySRTggq)](https://codecov.io/gh/IgorKohan/NormalHermiteSplines.jl)
 
 ![Problem definition](/images/problem-definition.png)
 
