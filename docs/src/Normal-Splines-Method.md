@@ -302,7 +302,7 @@ Consider the following interpolation problem:
 \begin{aligned}
 & f(p_i) =  u_i \, , \quad  i = 1, 2, \dots, n_1 \, ,
 \\  
-& \frac{ \partial{f} }{ \partial{e_j} }(s_j) =  v_j \, , \quad  j = 1, 2, \dots, n_2 \, ,
+& \frac{ \partial{f} }{ \partial{e_j} }(s_j) =  v_j \, , \  j = 1, 2, \dots, n_2 \, ,
 \\
 & n_1 \gt 0 \, ,  \ \  n_2 \ge 0 \, .
 \end{aligned}
@@ -345,6 +345,7 @@ and the norms on these spaces coincide. Therefore, all spaces ``H^s_\varepsilon 
 It can be shown that for any positive integer ``m`` the space ``H^m_\varepsilon (R^n)`` consists of all
 square integrable functions whose derivatives in the sense of distributions up to
 order m are square integrable [3]. The norm on ``H^m_\varepsilon (R^n)`` can be defined by
+
 ```math
 \| \varphi \|' = \left( \int \Big [ \varepsilon^2 | \varphi (x) |^2  + \sum_{|\alpha| = m} \frac{m!}{\alpha!} |D^\alpha \varphi (x) |^2 \Big ]
   \, d x \ 
@@ -509,6 +510,7 @@ V(\eta, \xi) =  \exp (-\varepsilon |\eta - \xi|)
              (1 + \varepsilon |\eta - \xi|) \, .
 ```
 and for space ``H^{s_2}_\varepsilon (R^n)``:
+
 ```math
 \tag{14}
 V(\eta, \xi) =  \exp (-\varepsilon |\eta - \xi|)
@@ -696,6 +698,7 @@ This spline can be presented as
 ```
 
 here
+
 ```math
 \begin{aligned}
 &  h_1 (\eta_1, \eta_2, \varepsilon) = \exp (-\varepsilon \sqrt{\eta_1^2 + \eta_2^2}) (1 + \varepsilon \sqrt{\eta_1^2 + \eta_2^2}) \, ,
@@ -806,6 +809,7 @@ Interpolating normal spline ``\sigma`` is solution of the variational problem:
 \tag{1}
   \| f \|^2 = \int ( \varepsilon ^2  + | \xi |^2 )^s | {\mathcal F} [f(\xi)] |^2  \, d \xi \ \to min  \, , \qquad \forall f \in H^s_\varepsilon (R^n) \ , \quad s > \frac{n}{2} \ , 
 ```
+
 ```math
 \tag{2}
  f(p_i) =  u_i \, , \quad  p_i \in R^n \, , \qquad i = 1, 2, \dots, n  \qquad \qquad\qquad\qquad\qquad\qquad\qquad 
@@ -822,12 +826,14 @@ where ``| \cdot |`` is the Euclidean norm, ``S'  (R^n)`` is space of L. Schwartz
 
 
 It can be shown that for any positive integer ``m`` the space ``H^m_\varepsilon (R^n)`` consists of all square integrable functions whose derivatives in the sense of distributions up to order m are square integrable [1]. The norm on ``H^m_\varepsilon (R^n)`` can be defined by
+
 ```math
 \| \varphi \|' = \left( \int \Big [ \varepsilon^2 | \varphi (x) |^2  + \sum_{|\alpha| = m} \frac{m!}{\alpha!} |D^\alpha \varphi (x) |^2 \Big ]
   \, d x \ 
  \right)^{1/2}  .
 ```
 The corresponding inner product has the form
+
 ```math
 \langle \varphi , \psi \rangle' =
 \left( \int \Big [ \varepsilon^2 \varphi (x) \overline{\psi (x)}  + \sum_{|\alpha| = m} \frac{m!}{\alpha!} D^\alpha \varphi (x) \overline{D^\alpha \psi (x)}  \Big ]
@@ -844,6 +850,7 @@ The norms ``\| \varphi \|`` and ``\| \varphi \|'`` are equivalent and space ``H^
   \| f \|'^2 = \int \Big [ \varepsilon^2 | f(x) |^2  + \sum_{|\alpha| = m} \frac{m!}{\alpha!} |D^\alpha f(x) |^2 \Big ]
   \, d x  \ \to min  \, , \ \  \forall f \in W^m_2 (R^n) \ , \ \varepsilon \gt 0 \, , \ m \gt \frac{n}{2} \ , 
 ```
+
 ```math
 \tag{4}
  f(p_i) =  u_i \, , \quad  p_i \in R^n \, , \qquad i = 1, 2, \dots, n  \qquad \qquad \qquad \qquad\qquad \qquad\qquad\qquad  
@@ -853,11 +860,13 @@ here ``W^m_2 (R^n)`` is Sobolev space.
 Normal spline ``\sigma`` always exist if all points ``\{p_i\}`` are different and it is unique.
 
 Polyharmonic ``D^m`` spline ``\sigma_{D^m}`` is the the result of minimization of the quadratic functional (Sobolev semi-norm) ([3], [4])
+
 ```math
 \tag{5}
  \int\limits_\Omega \sum_{|\alpha| = m} \frac{m!}{\alpha!} |D^\alpha f(x) |^2   \, d x \  \to min  \, , \qquad \forall f \in W^m_2 (\Omega) \ , \quad m > \frac{n}{2}
 ```
 under interpolation constraints
+
 ```math
 \tag{6}
  f(p_i) =  u_i \, , \quad  p_i \in \Omega \, , \qquad i = 1, 2, \dots, n  \qquad \qquad\qquad\qquad\qquad 
@@ -1141,6 +1150,7 @@ column to ``A``:
       \end{array}
       \right) \ , \qquad d^T  \in R^n
 ```
+
 Then its Cholesky factorization is [2]:
 
 ```math
@@ -1150,11 +1160,13 @@ Then its Cholesky factorization is [2]:
       \end{array}
       \right) \ ,
 ```
+
 where
 
 ```math
      e = L^{-1} d \ ,
 ```
+
 and
 
 ```math
@@ -1178,6 +1190,7 @@ Now assume ``\tilde A`` is obtained by deleting the ``r^{th}`` row and column fr
     \end{array}
      \right) \ .
 ```
+
 Then ``\tilde A`` can be written as
 
 ```math
@@ -1196,6 +1209,7 @@ By deleting the ``r^{th}`` row from ``L`` we get the matrix
     \end{array}
      \right) 
 ```
+
 with the property that ``H H^T = \tilde A``. Factor ``\tilde L`` can be received from ``H`` by applying Givens rotations to the matrix elements ``h_{r, r+1}, h_{r+1, r+2},`` ``\dots , h_{n-1, n}`` and deleting the last column of the obtained matrix ``\tilde H``:
 
 ```math
@@ -1205,6 +1219,7 @@ with the property that ``H H^T = \tilde A``. Factor ``\tilde L`` can be received
     \end{array}
      \right) =  \Bigl( \tilde L \ 0 \Bigr) \ ,
 ```
+
 where ``R=R_0 R_1 \dots R_{n - 1 - r}`` is the matrix of Givens rotations, ``L_{11}`` and ``\tilde L_{22}\, - `` lower triangle matrices, and
 
 ```math
@@ -1219,6 +1234,7 @@ where ``R=R_0 R_1 \dots R_{n - 1 - r}`` is the matrix of Givens rotations, ``L_{
  & \tilde H  \tilde H^T = \tilde L \tilde L^T \, , \quad \tilde L \tilde L^T = \tilde A \, .
 \end{aligned}
 ```
+
 Orthogonal matrix ``R_t \ (0 \le t \le n - 1 -r), R_t \in R^{n \times n}`` which defines the Givens rotation annulating ``(r+t , r+t+1)``th element of the ``H_k R_0 \dots R_{t-1}`` matrix is defined as
 
 ```math
@@ -1232,6 +1248,7 @@ Orthogonal matrix ``R_t \ (0 \le t \le n - 1 -r), R_t \in R^{n \times n}`` which
     \end{array}
      \right) \ .
 ```
+
 where entries ``( r+t , r+t )`` and ``( r+t+1 , r+t+1 )`` equal ``c``,  ``( r+t , r+t+1 )`` entry equals ``s``, and ``( r+t+1 , r+t )`` entry equals ``-s``, here ``c^2 + s^2 = 1``. Let's ``\tilde l_{ij}^{t-1} - `` coefficients of matrix ``H_k R_0 \dots R_{t-1}`` (``\tilde l_{ij}^{-1} - `` coefficients of ``H_k``) and
 
 ```math
@@ -1243,6 +1260,7 @@ where entries ``( r+t , r+t )`` and ``( r+t+1 , r+t+1 )`` equal ``c``,  ``( r+t 
 ```
 
 Then matrix ``H_k R_0 \dots R_t`` will differ from ``H_k R_0 \dots R_{t-1}`` with entries of ``( r+t )`` и ``( r+t+1 )`` columns only, thereby
+
 ```math
 \begin{aligned}
 &  \tilde l_{i,r+t}^t = \tilde l_{i,r+t}^{t-1} = 0 \, , \ \ 
@@ -1255,6 +1273,7 @@ Then matrix ``H_k R_0 \dots R_t`` will differ from ``H_k R_0 \dots R_{t-1}`` wit
      \quad  r + t \le i \le n - 1 \, ,
 \end{aligned}
 ```
+
 where
 
 ```math
@@ -1263,6 +1282,7 @@ where
 \qquad
   \tilde l_{r+t,r+t+1}^t = 0   \,  .
 ```
+
 Also, coefficient ``\tilde l_{r+t,r+t}^t`` is a nonnegative one.
 In order to avoid unnecessary overflow or underflow during computation of ``c`` and ``s``, it was recommended [3] to calculate value of the square root ``w = \sqrt{x^2 + y^2}`` as folows:
 
@@ -1277,6 +1297,7 @@ In order to avoid unnecessary overflow or underflow during computation of ``c`` 
 
 \end{aligned}
 ```
+
 Applying the this technique to Cholesky factorization allows significally reduce the complexity of calculations. So, in case of adding a row and the symmetric column to the original matrix it will be necessary to carry out about ``n^2`` flops instead of about ``\frac {(n + 1) ^ 3} {3}`` flops for the direct calculation of the new Cholesky factor. In the case of deleting a row and the symmetric column from the original matrix, the new Cholesky factor can be obtained with about ``3(n - r)^2`` flops (the worst case requires about ``3 (n - 1) ^ 2`` operations) instead of about ``\frac {(n - 1) ^ 3} {3} `` flops required for its direct calculation.
 
 **References**
