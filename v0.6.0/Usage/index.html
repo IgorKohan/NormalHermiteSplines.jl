@@ -35,24 +35,24 @@
         dσ[i] = evaluate_derivative(spline, p[i])
     end</code></pre><p><img src="../images/1d-usage/example-1a-der.svg" alt="Example 2A"/></p><p>Evaluate the spline at some points:</p><pre><code class="language-julia">    p = [3.1, 8.1, 12.1, 18.1]
     σ = evaluate(spline, p)</code></pre><pre class="documenter-example-output">4-element Vector{Float64}:
- 0.005233851103583653
- 1.0029716012459877
- 0.5803978696614296
- 0.00016170140376470243</pre><p>Evaluate the spline derivatives at the same evaluation points:</p><pre><code class="language-julia">    dσ = similar(p)
+ 0.005233851076580365
+ 1.0029716012422787
+ 0.580397869650044
+ 0.0001617014065642408</pre><p>Evaluate the spline derivatives at the same evaluation points:</p><pre><code class="language-julia">    dσ = similar(p)
     for i=1:length(p)
         dσ[i] = evaluate_derivative(spline, p[i])
     end
     dσ</code></pre><pre class="documenter-example-output">4-element Vector{Float64}:
-  0.05769978169913316
-  0.021648276550965222
- -0.1974246697636616
-  0.0013127826521445612</pre><p>Construct spline by different function values in nodes and evaluate new spline at the same evaluation points:</p><pre><code class="language-julia">    u2 = 2.0 .* u
+  0.05769978169875167
+  0.021648276551950937
+ -0.19742466975786324
+  0.0013127826539937107</pre><p>Construct spline by different function values in nodes and evaluate new spline at the same evaluation points:</p><pre><code class="language-julia">    u2 = 2.0 .* u
     spline = construct(spline, u2)
     σ = evaluate(spline, p)</code></pre><pre class="documenter-example-output">4-element Vector{Float64}:
- 0.010467702207167306
- 2.0059432024919754
- 1.1607957393228592
- 0.00032340280752940487</pre><p>B)</p><pre><code class="language-julia">    using NormalHermiteSplines
+ 0.01046770215316073
+ 2.0059432024845574
+ 1.160795739300088
+ 0.0003234028131284816</pre><p>B)</p><pre><code class="language-julia">    using NormalHermiteSplines
 
     x = collect(1.0:1.0:20)       # function nodes
     u = x.*0.0                    # function values in nodes
@@ -87,18 +87,18 @@
         dσ[i] = evaluate_derivative(spline, p[i])
     end</code></pre><p><img src="../images/1d-usage/example-1b-der.svg" alt="Example 2B"/></p><p>Evaluate the spline at some points:</p><pre><code class="language-julia">    p = [3.1, 8.1, 12.1, 18.1]
     σ = evaluate(spline, p)</code></pre><pre class="documenter-example-output">4-element Vector{Float64}:
- -5.3788085097039584e-12
-  0.9999999960755588
-  0.5799999979738004
- -3.296918293926865e-12</pre><p>Evaluate the spline derivatives at the same evaluation points:</p><pre><code class="language-julia">    dσ = similar(p)
+ -3.659295089164516e-12
+  0.9999999960760988
+  0.579999997968855
+ -1.1368683772161603e-12</pre><p>Evaluate the spline derivatives at the same evaluation points:</p><pre><code class="language-julia">    dσ = similar(p)
     for i=1:length(p)
         dσ[i] = evaluate_derivative(spline, p[i])
     end
     dσ</code></pre><pre class="documenter-example-output">4-element Vector{Float64}:
-  1.4839124081558303e-12
- -6.969100085323014e-8
- -0.20000003580236425
-  5.95733988455705e-13</pre><p>C) </p><p>Now let&#39;s interpolate function <span>$f(x)$</span> using a spline built with reproducing kernel RK_H0:</p><pre><code class="language-julia">    using NormalHermiteSplines
+  5.684341886080801e-13
+ -6.969230526010506e-8
+ -0.20000003580262601
+ -5.82458058392819e-13</pre><p>C) </p><p>Now let&#39;s interpolate function <span>$f(x)$</span> using a spline built with reproducing kernel RK_H0:</p><pre><code class="language-julia">    using NormalHermiteSplines
 
     x = collect(1.0:1.0:20)       # function nodes
     u = x.*0.0                    # function values in nodes
@@ -120,18 +120,18 @@
     significant_digits = estimate_accuracy(spline)</code></pre><pre class="documenter-example-output">14</pre><pre><code class="language-julia">    p = collect(1.0:0.2:20)        # evaluation points
     σ = evaluate(spline, p)</code></pre><p><img src="../images/1d-usage/example-1c.svg" alt="Example 1C"/></p><p>Evaluate the spline at some points:</p><pre><code class="language-julia">    p = [3.1, 8.1, 12.1, 18.1]
     σ = evaluate(spline, p)</code></pre><pre class="documenter-example-output">4-element Vector{Float64}:
-  1.5445641125352925e-15
-  0.9999718738633213
-  0.5799851868686876
- -4.200360956850355e-15</pre><p>This spline is an infinitely differentiable function everywhere excepting the spline nodes. Its derivative does not exist at spline nodes but we can differentiate the spline at other points. Let&#39;s evaluate the spline derivatives at the same evaluation points (which do not coincide with the spline nodes):</p><pre><code class="language-julia">    dσ = similar(p)
+ -2.4322247596457705e-15
+  0.9999718738633167
+  0.5799851868686853
+ -2.2235347873025233e-15</pre><p>This spline is an infinitely differentiable function everywhere excepting the spline nodes. Its derivative does not exist at spline nodes but we can differentiate the spline at other points. Let&#39;s evaluate the spline derivatives at the same evaluation points (which do not coincide with the spline nodes):</p><pre><code class="language-julia">    dσ = similar(p)
     for i=1:length(p)
         dσ[i] = evaluate_derivative(spline, p[i])
     end
     dσ</code></pre><pre class="documenter-example-output">4-element Vector{Float64}:
- -1.0224932880036346e-15
- -0.0002500089317770269
- -0.20012979651612287
-  2.082761353385413e-15</pre><h2 id="D-interpolation-case-2"><a class="docs-heading-anchor" href="#D-interpolation-case-2">2D interpolation case</a><a class="docs-heading-anchor-permalink" href="#D-interpolation-case-2" title="Permalink"></a></h2><p>Let&#39;s interpolate function <span>$\phi (x,y)  = \frac{2}{3}cos(10x)sin(10y) + \frac{1}{3}sin(10xy)$</span> defined on unit square <span>$\Omega = [0,1]^2$</span>.</p><img src="../images/2d-usage/m-cf-32.png" width="256"/><img src="../images/2d-usage/m-t-32.png" width="256"/><img src="../images/2d-usage/m-grid-32,1.png" width="197"/><p>We built a spline using function <span>$\phi$</span> values sampled on set of 100 pseudo-random nodes uniformly distributed on <span>$\Omega$</span> (case A).</p><p>Spline plot                                                                        Approximation error plots</p><img src="../images/2d-usage/s-cf-32,32,1,2,0.0,-.png" width="256"/><img src="../images/2d-usage/delta-cf-32,32,1,2,0.0,-.png" width="256"/><img src="../images/2d-usage/delta-s-32,32,1,2,0.0,-.png" width="256"/><p>and </p><p>using function <span>$\phi$</span> values sampled on set of 100 pseudo-random nodes uniformly distributed on <span>$\Omega$</span> and 80 function <span>$\phi$</span> gradient values defined at nodes located on the border of domain <span>$\Omega$</span> (case B):</p><img src="../images/2d-usage/m-grid-33,1.png" width="197"/> <p>here red dots represent the function <span>$\phi$</span> gradient nodes. </p><p>Spline plot                                                                         Approximation error plots</p><img src="../images/2d-usage/s-cf-33,33,1,2,1.0,-.png" width="256"/><img src="../images/2d-usage/delta-cf-33,33,1,2,1.0,-.png" width="256"/><img src="../images/2d-usage/delta-s-33,33,1,2,1.0,-.png" width="256"/><p>Following is the code example for case A:</p><pre><code class="language-julia">    using Random
+ -6.871476647545198e-16
+ -0.00025000893178171734
+ -0.2001297965161252
+  3.684193861336027e-15</pre><h2 id="D-interpolation-case-2"><a class="docs-heading-anchor" href="#D-interpolation-case-2">2D interpolation case</a><a class="docs-heading-anchor-permalink" href="#D-interpolation-case-2" title="Permalink"></a></h2><p>Let&#39;s interpolate function <span>$\phi (x,y)  = \frac{2}{3}cos(10x)sin(10y) + \frac{1}{3}sin(10xy)$</span> defined on unit square <span>$\Omega = [0,1]^2$</span>.</p><img src="../images/2d-usage/m-cf-32.png" width="256"/><img src="../images/2d-usage/m-t-32.png" width="256"/><img src="../images/2d-usage/m-grid-32,1.png" width="197"/><p>We built a spline using function <span>$\phi$</span> values sampled on set of 100 pseudo-random nodes uniformly distributed on <span>$\Omega$</span> (case A).</p><p>Spline plot                                                                        Approximation error plots</p><img src="../images/2d-usage/s-cf-32,32,1,2,0.0,-.png" width="256"/><img src="../images/2d-usage/delta-cf-32,32,1,2,0.0,-.png" width="256"/><img src="../images/2d-usage/delta-s-32,32,1,2,0.0,-.png" width="256"/><p>and </p><p>using function <span>$\phi$</span> values sampled on set of 100 pseudo-random nodes uniformly distributed on <span>$\Omega$</span> and 80 function <span>$\phi$</span> gradient values defined at nodes located on the border of domain <span>$\Omega$</span> (case B):</p><img src="../images/2d-usage/m-grid-33,1.png" width="197"/> <p>here red dots represent the function <span>$\phi$</span> gradient nodes. </p><p>Spline plot                                                                         Approximation error plots</p><img src="../images/2d-usage/s-cf-33,33,1,2,1.0,-.png" width="256"/><img src="../images/2d-usage/delta-cf-33,33,1,2,1.0,-.png" width="256"/><img src="../images/2d-usage/delta-s-33,33,1,2,1.0,-.png" width="256"/><p>Following is the code example for case A:</p><pre><code class="language-julia">    using Random
     using NormalHermiteSplines
 
     # generating 100 uniform random nodes
@@ -186,17 +186,17 @@
     # number of significant digits in the function value interpolation result.
     significant_digits = estimate_accuracy(spline)</code></pre><pre class="documenter-example-output">11</pre><pre><code class="language-julia">    σ = evaluate(spline, grid)
     # Return the Root Mean Square Error (RMSE) of interpolation
-    rmse = sqrt(sum((f .- σ).^2)) / sqrt(length(f))</code></pre><pre class="documenter-example-output">0.02209299026656501</pre><pre><code class="language-julia">   # Return the Maximum Absolute Error (MAE) of interpolation
-   mae = maximum(abs.(f .- σ))</code></pre><pre class="documenter-example-output">0.17939052507941705</pre><p>Value of function <span>$\phi$</span> at evaluation point <span>$p = [0.5; 0.5]$</span></p><pre><code class="language-julia">    p = [0.5; 0.5]
+    rmse = sqrt(sum((f .- σ).^2)) / sqrt(length(f))</code></pre><pre class="documenter-example-output">0.022092990266874914</pre><pre><code class="language-julia">   # Return the Maximum Absolute Error (MAE) of interpolation
+   mae = maximum(abs.(f .- σ))</code></pre><pre class="documenter-example-output">0.1793905250813515</pre><p>Value of function <span>$\phi$</span> at evaluation point <span>$p = [0.5; 0.5]$</span></p><pre><code class="language-julia">    p = [0.5; 0.5]
     x = p[1]
     y = p[2]
-    f = (2.0*cos(10.0*x)*sin(10.0*y) + sin(10.0*x*y))/3.0</code></pre><pre class="documenter-example-output">0.018150344404862222</pre><p>Value of spline at the evaluation point:</p><pre><code class="language-julia">    σ = evaluate_one(spline, p)</code></pre><pre class="documenter-example-output">0.017166894615229467</pre><p>Difference of function <span>$\phi$</span> and spline values at the evaluation point:</p><pre><code class="language-julia">    diff = f - σ</code></pre><pre class="documenter-example-output">0.0009834497896327558</pre><p>Gradient of function <span>$\phi$</span> at the evaluation point</p><pre><code class="language-julia">    g1 = (10.0*y*cos(10.0*x*y) - 20.0*sin(10.0*x)*sin(10.0*y))/3.0
+    f = (2.0*cos(10.0*x)*sin(10.0*y) + sin(10.0*x*y))/3.0</code></pre><pre class="documenter-example-output">0.018150344404862222</pre><p>Value of spline at the evaluation point:</p><pre><code class="language-julia">    σ = evaluate_one(spline, p)</code></pre><pre class="documenter-example-output">0.01716689461581211</pre><p>Difference of function <span>$\phi$</span> and spline values at the evaluation point:</p><pre><code class="language-julia">    diff = f - σ</code></pre><pre class="documenter-example-output">0.0009834497890501108</pre><p>Gradient of function <span>$\phi$</span> at the evaluation point</p><pre><code class="language-julia">    g1 = (10.0*y*cos(10.0*x*y) - 20.0*sin(10.0*x)*sin(10.0*y))/3.0
     g2 = (20.0*cos(10.0*x)*cos(10.0*y) + 10.0*x*cos(10.0*x*y))/3.0
     f_grad = [g1; g2]</code></pre><pre class="documenter-example-output">2-element Vector{Float64}:
  -7.465477789499732
  -0.7988111228330643</pre><p>Gradient of spline at the evaluation point</p><pre><code class="language-julia">    σ_grad = evaluate_gradient(spline, p)</code></pre><pre class="documenter-example-output">2-element Vector{Float64}:
- -7.4815682885317285
- -0.8051369242783533</pre><p>Norm of difference of function <span>$\phi$</span> and spline gradient values at the evaluation point:</p><pre><code class="language-julia">    diff_grad = sqrt(sum((f_grad .- σ_grad).^2))</code></pre><pre class="documenter-example-output">0.017289300825189386</pre><p>Corresponding code example for case B:</p><pre><code class="language-julia">    using Random
+ -7.48156828852574
+ -0.8051369242762255</pre><p>Norm of difference of function <span>$\phi$</span> and spline gradient values at the evaluation point:</p><pre><code class="language-julia">    diff_grad = sqrt(sum((f_grad .- σ_grad).^2))</code></pre><pre class="documenter-example-output">0.017289300818837994</pre><p>Corresponding code example for case B:</p><pre><code class="language-julia">    using Random
     using NormalHermiteSplines
 
     function get_2D_border_nodes(m::Int)
@@ -297,17 +297,17 @@
     # number of significant digits in the function value interpolation result.
     significant_digits = estimate_accuracy(spline)</code></pre><pre class="documenter-example-output">9</pre><pre><code class="language-julia">    σ = evaluate(spline, grid)
     # Return the Root Mean Square Error (RMSE) of interpolation
-    rmse = sqrt(sum((f .- σ).^2)) / sqrt(length(f))</code></pre><pre class="documenter-example-output">0.0033315866550400375</pre><pre><code class="language-julia">   # Return the Maximum Absolute Error (MAE) of interpolation
-   mae = maximum(abs.(f .- σ))</code></pre><pre class="documenter-example-output">0.01913080857367011</pre><p>Value of function <span>$\phi$</span> at evaluation point <span>$p = [0.5; 0.5]$</span></p><pre><code class="language-julia">    p = [0.5; 0.5]
+    rmse = sqrt(sum((f .- σ).^2)) / sqrt(length(f))</code></pre><pre class="documenter-example-output">0.003331586648399733</pre><pre><code class="language-julia">   # Return the Maximum Absolute Error (MAE) of interpolation
+   mae = maximum(abs.(f .- σ))</code></pre><pre class="documenter-example-output">0.01913080887528129</pre><p>Value of function <span>$\phi$</span> at evaluation point <span>$p = [0.5; 0.5]$</span></p><pre><code class="language-julia">    p = [0.5; 0.5]
     x = p[1]
     y = p[2]
-    f = (2.0*cos(10.0*x)*sin(10.0*y) + sin(10.0*x*y))/3.0</code></pre><pre class="documenter-example-output">0.018150344404862222</pre><p>Value of spline at the evaluation point:</p><pre><code class="language-julia">    σ = evaluate_one(spline, p)</code></pre><pre class="documenter-example-output">0.01733527009446334</pre><p>Difference of function <span>$\phi$</span> and spline values at the evaluation point:</p><pre><code class="language-julia">    diff = f - σ</code></pre><pre class="documenter-example-output">0.0008150743103988826</pre><p>Gradient of function <span>$\phi$</span> at the evaluation point</p><pre><code class="language-julia">    g1 = (10.0*y*cos(10.0*x*y) - 20.0*sin(10.0*x)*sin(10.0*y))/3.0
+    f = (2.0*cos(10.0*x)*sin(10.0*y) + sin(10.0*x*y))/3.0</code></pre><pre class="documenter-example-output">0.018150344404862222</pre><p>Value of spline at the evaluation point:</p><pre><code class="language-julia">    σ = evaluate_one(spline, p)</code></pre><pre class="documenter-example-output">0.017335270262151425</pre><p>Difference of function <span>$\phi$</span> and spline values at the evaluation point:</p><pre><code class="language-julia">    diff = f - σ</code></pre><pre class="documenter-example-output">0.000815074142710797</pre><p>Gradient of function <span>$\phi$</span> at the evaluation point</p><pre><code class="language-julia">    g1 = (10.0*y*cos(10.0*x*y) - 20.0*sin(10.0*x)*sin(10.0*y))/3.0
     g2 = (20.0*cos(10.0*x)*cos(10.0*y) + 10.0*x*cos(10.0*x*y))/3.0
     f_grad = [g1; g2]</code></pre><pre class="documenter-example-output">2-element Vector{Float64}:
  -7.465477789499732
  -0.7988111228330643</pre><p>Gradient of spline at the evaluation point</p><pre><code class="language-julia">    σ_grad = evaluate_gradient(spline, p)</code></pre><pre class="documenter-example-output">2-element Vector{Float64}:
- -7.48378137008649
- -0.7997070273895588</pre><p>Norm of difference of function <span>$\phi$</span> and spline gradient values at the evaluation point:</p><pre><code class="language-julia">    diff_grad = sqrt(sum((f_grad .- σ_grad).^2))</code></pre><pre class="documenter-example-output">0.018325493370446602</pre><h2 id="Q-and-A"><a class="docs-heading-anchor" href="#Q-and-A">Q &amp; A</a><a id="Q-and-A-1"></a><a class="docs-heading-anchor-permalink" href="#Q-and-A" title="Permalink"></a></h2><p>Q1. <em>Question</em>: The call</p><pre><code class="language-julia">spline = interpolate(x, u, RK_H2())</code></pre><p>cause the following error: <code>PosDefException: matrix is not positive definite; Cholesky factorization failed.</code> What is a reason of the error and how to resolve it?</p><p>A1. <em>Answer</em>: Creating a Bessel potential space reproducing kernel object with omitted scaling parameter <code>ε</code> means that this parameter will be estimated during interpolating procedure execution. It might happen that estimated value of the <code>ε</code> is too small and corresponding  Gram matrix of the system of linear equations which defines the normal spline coefficients is a very ill-conditioned one and it lost its positive definiteness property because of floating-point rounding errors.  </p><p>There are two ways to fix it.</p><ul><li>We can get the estimated value of the parameter <code>ε</code> by calling <code>get_epsilon</code> function:</li></ul><pre><code class="language-julia">ε = get_epsilon(spline)</code></pre><p>then we can call the <code>interpolate</code> function with a larger value of this parameter:</p><pre><code class="language-julia">larger_ε = 5.0*ε
+ -7.483781379609354
+ -0.7997070300043561</pre><p>Norm of difference of function <span>$\phi$</span> and spline gradient values at the evaluation point:</p><pre><code class="language-julia">    diff_grad = sqrt(sum((f_grad .- σ_grad).^2))</code></pre><pre class="documenter-example-output">0.018325503009757327</pre><h2 id="Q-and-A"><a class="docs-heading-anchor" href="#Q-and-A">Q &amp; A</a><a id="Q-and-A-1"></a><a class="docs-heading-anchor-permalink" href="#Q-and-A" title="Permalink"></a></h2><p>Q1. <em>Question</em>: The call</p><pre><code class="language-julia">spline = interpolate(x, u, RK_H2())</code></pre><p>cause the following error: <code>PosDefException: matrix is not positive definite; Cholesky factorization failed.</code> What is a reason of the error and how to resolve it?</p><p>A1. <em>Answer</em>: Creating a Bessel potential space reproducing kernel object with omitted scaling parameter <code>ε</code> means that this parameter will be estimated during interpolating procedure execution. It might happen that estimated value of the <code>ε</code> is too small and corresponding  Gram matrix of the system of linear equations which defines the normal spline coefficients is a very ill-conditioned one and it lost its positive definiteness property because of floating-point rounding errors.  </p><p>There are two ways to fix it.</p><ul><li>We can get the estimated value of the parameter <code>ε</code> by calling <code>get_epsilon</code> function:</li></ul><pre><code class="language-julia">ε = get_epsilon(spline)</code></pre><p>then we can call the <code>interpolate</code> function with a larger value of this parameter:</p><pre><code class="language-julia">larger_ε = 5.0*ε
 spline = interpolate(x, u, RK_H2(larger_ε))</code></pre><ul><li>We may change the precision of floating point calculations. Namely, it is possible to use Julia standard BigFloat numbers or Double64 - extended precision float type from the package <a href="https://github.com/JuliaMath/DoubleFloats.jl">DoubleFloats</a>:</li></ul><pre><code class="language-julia">using DoubleFloats
 
 x = Double64.(x)
@@ -319,4 +319,4 @@ significant_digits = estimate_accuracy(spline)</code></pre><p>In a case when est
 spline = interpolate(x, u, RK_H2(e_smaller))
 cond = estimate_cond(spline)
 significant_digits = estimate_accuracy(spline)
-σ = evaluate(spline, p)</code></pre><p>Taking into account new <code>cond</code> and <code>significant_digits</code> values we decide of making further correction of the scaling parameter.</p><p>For further information, see <a href="https://igorkohan.github.io/NormalHermiteSplines.jl/stable/Parameter-Choice/">Selecting a good value of the scaling parameter</a>.</p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../Public-API/">« Public API</a><a class="docs-footer-nextpage" href="../Normal-Splines-Method/">Normal Splines Method »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Monday 12 April 2021 13:00">Monday 12 April 2021</span>. Using Julia version 1.6.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
+σ = evaluate(spline, p)</code></pre><p>Taking into account new <code>cond</code> and <code>significant_digits</code> values we decide of making further correction of the scaling parameter.</p><p>For further information, see <a href="https://igorkohan.github.io/NormalHermiteSplines.jl/stable/Parameter-Choice/">Selecting a good value of the scaling parameter</a>.</p></article><nav class="docs-footer"><a class="docs-footer-prevpage" href="../Public-API/">« Public API</a><a class="docs-footer-nextpage" href="../Normal-Splines-Method/">Normal Splines Method »</a><div class="flexbox-break"></div><p class="footer-message">Powered by <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> and the <a href="https://julialang.org/">Julia Programming Language</a>.</p></nav></div><div class="modal" id="documenter-settings"><div class="modal-background"></div><div class="modal-card"><header class="modal-card-head"><p class="modal-card-title">Settings</p><button class="delete"></button></header><section class="modal-card-body"><p><label class="label">Theme</label><div class="select"><select id="documenter-themepicker"><option value="documenter-light">documenter-light</option><option value="documenter-dark">documenter-dark</option></select></div></p><hr/><p>This document was generated with <a href="https://github.com/JuliaDocs/Documenter.jl">Documenter.jl</a> on <span class="colophon-date" title="Monday 12 April 2021 15:04">Monday 12 April 2021</span>. Using Julia version 1.6.0.</p></section><footer class="modal-card-foot"></footer></div></div></div></body></html>
