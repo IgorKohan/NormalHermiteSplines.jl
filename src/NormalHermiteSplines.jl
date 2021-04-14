@@ -383,7 +383,8 @@ end
 Prepare the 1D spline by constructing and factoring a Gram matrix of the interpolation problem.
 Initialize the `NormalSpline` object.
 # Arguments
-- `nodes`: The function value nodes.
+- `nodes`: function value interpolation nodes.
+           This should be an `n_1` vector where `n_1` is the number of function value nodes.
 - `kernel`: reproducing kernel of Bessel potential space the normal spline is constructed in.
             It must be a struct object of the following type:
               `RK_H0` if the spline is constructing as a continuous function,
@@ -405,10 +406,8 @@ end
 
 Prepare and construct the 1D spline.
 # Arguments
-- `nodes`: The function value nodes.
-           This should be an `n×n_1` matrix, where `n` is dimension of the sampled space
-           and `n_1` is the number of function value nodes.
-           It means that each column in the matrix defines one node.
+- `nodes`: function value interpolation nodes.
+           This should be an `n_1` vector where `n_1` is the number of function value nodes.
 - `values`: function values at `n_1` interpolation nodes.
 - `kernel`: reproducing kernel of Bessel potential space the normal spline is constructed in.
             It must be a struct object of the following type:
@@ -435,7 +434,7 @@ Evaluate the spline values/value at the `points` locations.
 # Arguments
 - `spline`: the `NormalSpline` object returned by `interpolate` or `construct` function.
 - `points`: locations at which spline values are evaluating.
-                       This should be a vector of size `m` where `m` is the number of evaluating points.
+            This should be a vector of size `m` where `m` is the number of evaluating points.
 
 Return: spline value at the `point` location.
 """
@@ -488,11 +487,13 @@ end
 """
 `prepare(nodes::Vector{T}, d_nodes::Vector{T}, kernel::RK = RK_H1()) where {T <: AbstractFloat, RK <: ReproducingKernel_1}`
 
-Prepare the 1D normal spline by constructing and factoring a Gram matrix of the interpolation problem.
+Prepare the 1D interpolating normal spline by constructing and factoring a Gram matrix of the problem.
 Initialize the `NormalSpline` object.
 # Arguments
-- `nodes`: The function value nodes.
+- `nodes`: function value interpolation nodes.
+           This should be an `n_1` vector where `n_1` is the number of function value nodes.
 - `d_nodes`: The function derivatives nodes.
+             This should be an `n_2` vector where `n_2` is the number of function derivatives nodes.
 - `kernel`: reproducing kernel of Bessel potential space the normal spline is constructed in.
             It must be a struct object of the following type:
               `RK_H1` if the spline is constructing as a differentiable function,
@@ -514,11 +515,13 @@ end
 """
 `interpolate(nodes::Vector{T}, values::Vector{T}, d_nodes::Vector{T}, d_values::Vector{T}, kernel::RK = RK_H1()) where {T <: AbstractFloat, RK <: ReproducingKernel_1}`
 
-Prepare and construct the 1D spline.
+Prepare and construct the 1D interpolating normal spline.
 # Arguments
-- `nodes`: The function value nodes.
+- `nodes`: function value interpolation nodes.
+           This should be an `n_1` vector where `n_1` is the number of function value nodes.
 - `values`: function values at `nodes` nodes.
-- `d_nodes`: The function derivative nodes.
+- `d_nodes`: The function derivatives nodes.
+             This should be an `n_2` vector where `n_2` is the number of function derivatives nodes.
 - `d_values`: function derivative values at `d_nodes` nodes.
 - `kernel`: reproducing kernel of Bessel potential space the normal spline is constructed in.
             It must be a struct object of the following type:
