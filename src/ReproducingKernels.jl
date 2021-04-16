@@ -89,7 +89,7 @@ end
                      ξ::Vector{T}
                     ) where {T <: AbstractFloat, RK <: ReproducingKernel_0}
    defined::Bool  = false
-   x::T = kernel.ε * sqrt(sum((ξ - η) .^ 2))
+   x::T = kernel.ε * norm(ξ - η)
    if isa(kernel, RK_H2)
       defined = true
       value = (T(3.0) + x * (T(3.0) + x)) * exp(-x)
@@ -140,7 +140,7 @@ end
 #  Note: Derivative of spline built with reproducing kernel RK_H0 does not exist at the spline nodes.
    value::T = T(0.0)
    defined::Bool  = false
-   normt = sqrt(sum((η - ξ) .^ 2))
+   normt = norm(η - ξ)
    x = kernel.ε * normt
    if isa(kernel, RK_H2)
       defined = true
@@ -173,7 +173,7 @@ end
    defined::Bool  = false
    if isa(kernel, RK_H2)
       defined = true
-      x = kernel.ε * sqrt(sum((η - ξ) .^ 2))
+      x = kernel.ε * norm(η - ξ)
       if r == k
          if x > T(0.0)
             value = kernel.ε^2 * exp(-x) * (T(1.0) + x - (kernel.ε * (ξ[r] - η[r]))^2)
@@ -190,7 +190,7 @@ end
    end
    if isa(kernel, RK_H1)
       defined = true
-      t = sqrt(sum((η - ξ) .^ 2))
+      t = norm(η - ξ)
       x = kernel.ε * t
       if r == k
          if t > T(0.0)
